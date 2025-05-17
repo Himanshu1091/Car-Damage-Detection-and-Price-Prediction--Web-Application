@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- Seconds Container (Submit damage assessment)  -->
+<div class="container-fluid bg-2 text-center" id="third">
+{% if scroll %}
+<script>
+    document.location.hash = '#' + '{{ scroll }}';
+</script>
+{% endif %}
+    <h3>Submit Damage Assessment</h3>
+        <div class = flashes>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+        {% endwith %}</div>
+
+
+<div class="fileinput fileinput-new" data-provides="fileinput" style="max-height: 240px; max-width: 240px;">
+  <div class="fileinput-preview thumbnail" data-trigger="fileinput" id="window"></div>
+  <div>
+    <form action="assessment" method="POST" enctype="multipart/form-data" class ="form-inline">
+    <span class="btn btn-default btn-file">
+    <button class="btn btn-info fileinput-new">Select Image</button>
+    <button class="btn btn-info fileinput-exists">Change</button>
+    <input type="file" id="filename" name="file"></span>
+    <button type="submit" class="btn btn-info fileinput-exists" id="analyze" onclick="loading();">Submit</button></form></div>
+
+  </div>
+  <div id="loading"></div>
+      <h4>Image tips:</h4>
+    <p>Please Upload a Photo Highlighting One Primary Damaged Area. (e.g., Front, Side, or Rear).</p>
+    <p>Capture the majority of the vehicle in the photo,ensuring the damage is clearly visible to avoid inaccurate assesment.</p>
+  </div>
+</div>
+<script>
+  // Select all flash messages and add fade-out class
+  document.querySelectorAll('.flash-message').forEach(function (element) {
+    element.classList.add('fade-out');
+
+    // Remove the message from the DOM after 2 seconds
+    setTimeout(function () {
+      element.remove();
+    }, 1000);
+  });
+</script>
+{% endblock %}

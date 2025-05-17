@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Car Damage Detector</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Century Gothic" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='design.css') }}">
+
+  <!-- Jasny Bootstrap -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+
+  <script src="{{ url_for('static', filename='index.js') }}"></script>
+</head>
+
+<!--Navigation Bar-->
+
+<body id="top">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ url_for('home') }}">Car Damage Detector</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="#third">Assess Damage</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- First Container (Splash)-->
+  <div class="container-fluid bg-0 main-content-color text-center" id="first">
+    <h1 class="">Don't Worry!!</h1>
+    <h3 class=""> Upload the damaged piece, and let our expertise do the rest</h3>
+    <br>
+    <a href="#third" class="btn btn-info btn-lg ">
+      <span class="glyphicon glyphicon-phone"></span> Go to Damage Assessment
+    </a>
+  </div>
+
+  <!-- Second and Third Container (Results)-->
+  {% block content %}{% endblock %}
+
+  <!-- About Section -->
+<section id="about" class="container-fluid bg-1 text-center">
+  <h2>About Car Damage Detection and Price Prediction Project</h2>
+  <p>This project aims to detect car damages using image processing techniques and predict the repair costs based on the severity of the damage. With the increasing complexity of modern vehicles and the rising demand for efficient repair solutions, our project strives to bridge the gap between traditional assessment methods and advanced technology. By harnessing the power of machine learning algorithms and computer vision, we have developed an innovative system capable of accurately identifying and analyzing car damages from images. Our goal is to empower car owners, insurance companies, and automotive professionals with a reliable tool that streamlines the repair process, reduces turnaround times, and ultimately enhances safety on the roads.</p>
+  
+  <!-- Mission Statement -->
+  <div class="mission-vision">
+    <h3><u>Mission</u></h3>
+    <p class="mission-content">Our mission is to provide accurate and efficient car damage detection solutions to enhance safety and streamline repair processes. We are committed to leveraging cutting-edge technology and expertise to deliver reliable results that exceed customer expectations.</p>
+  </div>
+
+  <!-- Vision Statement -->
+  <div class="mission-vision">
+    <h3><u>Vision</u></h3>
+    <p class="vision-content">Our vision is to revolutionize the automotive industry by leveraging cutting-edge technology to automate and optimize the assessment and repair of vehicle damages. We aspire to create a future where car owners can rely on innovative solutions to quickly and effectively address any damage, ensuring their safety and peace of mind on the road.</p>
+  </div>
+</section>
+
+<!-- Internal CSS for About Section -->
+<style>
+  #about {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .mission-vision {
+    margin-bottom: 30px;
+  }
+
+  .mission-vision h3 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .mission-vision h3 u {
+    color: black; /* Blue color for underline */
+  }
+
+  .mission-content, .vision-content {
+    font-size: 18px;
+    line-height: 1.6;
+    color: black;
+  }
+</style>
+
+
+  <!-- Contact Us Section -->
+<section id="contact" class="container-fluid bg-2 text-center">
+  <h2>Contact Us</h2>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="col-sm-12">
+        <h4>Himanshu Londhe</h4>
+        <p>Email: himanshu.londhe2018@gmail.com</p>
+        <p>Pune, Maharashtra, India.</p>
+      </div>
+      <div class="col-sm-12">
+        <h4>Kovit Domgre</h4>
+        <p>Email: dongre9876@gmail.com</p>
+        <p>Pune, Maharashtra, India.</p>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="col-sm-12">
+        <h4>Arfat Bangi</h4>
+        <p>Email: bangiarfat52@gmail.com</p>
+        <p>Pune, Maharashtra, India.</p>
+      </div>
+      <div class="col-sm-12">
+        <h4>Sneha Gavhane</h4>
+        <p>Email: sgavhane046@gmail.com</p>
+        <p>Pune, Maharashtra, India.</p>
+    </div>
+  </div>
+</section>
+
+</body>
+
+</html>

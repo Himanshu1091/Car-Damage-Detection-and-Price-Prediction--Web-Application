@@ -1,0 +1,240 @@
+body {
+  font: sans-serif;
+  line-height: 1.8;
+  color: #ff4e50;
+}
+
+p {
+  font-size: 16px;
+}
+
+.margin {
+  margin-bottom: 45px;
+}
+
+.bg-0 {
+  background-image: linear-gradient(rgba(10, 66, 83, 0.29),
+      rgba(255, 252, 252, 0)),
+    url('../static/car.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  color: #def0e6;
+  background-position: 100% 60%
+}
+
+.bg-1 {
+  background-color: lightblue;
+  /* Prussian Blue 0B3C5D, Sky Blue328CC1, Ivory Black1D2731 Gold Leaf D9b310 */
+  color: black;
+}
+
+.bg-2 {
+  background-color: white;
+  color: black;
+}
+
+.bg-3 {
+  background-color: #ffe357;
+  /* Rusty Red #984B43 */
+  color: #ffffff;
+
+}
+
+.bg-4 {
+  background-color: #ff4e50;
+  color: #ffffff;
+
+}
+
+/* Add a dark background color with a little bit see-through */
+.navbar {
+  margin-bottom: 0;
+  background-color: #efefef;
+  border: 0;
+  font-size: 12px !important;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+
+/* Add a black color to all navbar links */
+.navbar li a,
+.navbar .navbar-brand {
+  color: black !important;
+  font-weight: 700 !important;
+  font-size: 22px;
+}
+
+.navbar li a {
+  font-size: 16px;
+  border: 0 black;
+  word-spacing: 0px;
+  letter-spacing: 0px;
+}
+
+/* On hover, change link color to red */
+.navbar-nav li a:hover {
+  color: red !important;
+  transition: .08s;
+}
+
+/* Add a black line on hover */
+.navbar-nav li a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navbar-nav li a:hover::after {
+  transform: scaleX(1);
+}
+
+/* The active link */
+.navbar-nav li.active a {
+  color: #fff !important;
+  background-color: #29292c !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+}
+
+#first {
+  padding: 240px 0px 240px 0px;
+}
+
+
+img {
+  display: block;
+  margin: auto;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.main-content-color{
+  color: white;
+  font-weight: 900;
+}
+
+.container-fluid {
+  padding: 70px 50px 70px 50px;
+}
+
+.container-fluid div {
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.container-fluid a {
+  color: white;
+}
+
+.container-fluid a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.btn {
+  color: white;
+  font-weight: 400;
+}
+
+/* Add a dark background color to the footer */
+footer {
+  background-color: #DEF0E6;
+  color: #f5f5f5;
+  padding: 16px;
+}
+
+footer a {
+  color: #d5d5d5 !important;
+}
+
+footer a:hover {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+div#loading {
+  width: 150px;
+  height: 50px;
+  display: none;
+  background: url(/static/loading_image.gif) no-repeat;
+  background-position: center;
+  cursor: wait;
+}
+
+.logo-small {
+  color: #d5d5d5;
+  font-size: 50px;
+}
+
+table {
+  width: 80%;
+  max-width: 400px;
+}
+
+#picture {
+  width: 80%;
+  max-width: 400px;
+}
+
+table,
+th,
+td {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+tr:hover {
+  background-color: lightblue
+}
+
+th,
+td {
+  padding: 5px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+td {
+  vertical-align: middle;
+}
+
+label {
+  text-align: left;
+}
+
+#window {
+
+  border: 1px solid black;
+}
+
+#first {
+
+  color: black;
+}
+
+.col-sm-15 {
+
+  background-color: white;
+  color: black;
+}
+
+
+/*.fileinput-preview.thumbnail {
+  width: 100px; /* Set your desired width */
+  /*height: 100px; /* Set your desired height */
+/*}

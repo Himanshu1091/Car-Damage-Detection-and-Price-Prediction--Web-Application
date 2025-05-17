@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-fluid bg-2 text-center" id="third">
+  {% if scroll %}
+  <script>
+    document.location.hash = '#' + '{{ scroll }}';
+  </script>
+  {% endif %}
+  <h3>Damage Assessment Complete</h3>
+  <br>
+  <p><img src="{{ url_for('send_file', filename=filename) }}" class="img-thumbnail" id="picture"></p>
+  <h4>Results:</h4>
+  <table>
+    <tr>
+      <td>Car validation check</td>
+      {% if result['pipe1_result'] %}
+      <td><span class="glyphicon glyphicon-ok"></span></td>
+    </tr>
+    <tr>
+      <td>Damage validation check</td>
+      {% if result['pipe2_result'] %}
+      <td><span class="glyphicon glyphicon-ok"></span></td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td>{{ result['location'] }}</td>
+    </tr>
+    <tr>
+      <td>Severity</td>
+      <td>{{ result['severity'] }}</td>
+    </tr>
+    <tr>
+      <td>Approximate Repair cost</td>
+      {% if result['location'] == "front" and result['severity'] == "minor" %}
+      <td>10,000 - 20,000 /-</td>
+      {% endif %}
+      {% if result['location'] == "rear" and result['severity'] == "minor" %}
+      <td>12,000 - 20,000 /-</td>
+      {% endif %}
+      {% if result['location'] == "side" and result['severity'] == "minor" %}
+      <td>15,000 - 25,000 /-</td>
+      {% endif %}
+      {% if result['location'] == "front" and result['severity'] == "moderate" %}
+      <td>25,000 - 50,000 /-</td>
+      {% endif %}
+      {% if result['location'] == "rear" and result['severity'] == "moderate" %}
+      <td>25,000 - 45,000 /-</td>
+      {% endif %}
+      {% if result['location'] == "side" and result['severity'] == "moderate" %}
+      <td>30,000 - 65,000 /-</td>
+      {% endif %}
+      {% if result['location'] == "front" and result['severity'] == "severe" %}
+      <td>1,00,000 - 1,50,000 /-</td>
+      {% endif %}
+      {% if result['location'] == "rear" and result['severity'] == "severe" %}
+      <td>90,000 - 1,20,000 /-</td>
+      {% endif %}
+      {% if result['location'] == "side" and result['severity'] == "severe" %}
+      <td>70,00,000 - 1,20,000+ /-</td>
+      {% endif %}
+    </tr>
+  </table>
+  {% else %}
+  <td><span class="glyphicon glyphicon-remove"></span></td>
+  </tr>
+  </table>
+  <br>
+  <p>{{ result['pipe2_message'][0] }}</p>
+  <p>{{ result['pipe2_message'][1] }}</p>
+  {% endif %}
+  {% else %}
+  <td><span class="glyphicon glyphicon-remove"></span></td>
+  </tr>
+  </table>
+  <br>
+  <p>{{ result['pipe1_message'][0] }}</p>
+  <p>{{ result['pipe1_message'][1] }}</p>
+  {% endif %}
+  <br>
+  <p>{{ result['final'] }}</p>
+</div>
+
+{% endblock %}
